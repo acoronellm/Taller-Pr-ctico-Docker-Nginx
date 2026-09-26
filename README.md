@@ -68,7 +68,7 @@ La explicación se encuentra en la [Parte 7](#Parte-7---Eliminar-el-acceso-direc
 
 #  Explicación de localhost vs nombre del servicio Docker.
 
-La explicación se encuentra en el punto 10 de la [Parte 9](#Parte-9-—-Diagnóstico-de-errores)
+La explicación se encuentra en el punto 10 de la [Parte 9](#parte-9--diagnóstico-de-errores)
 
 # Parte 3 - Analizar el contenedor
 
