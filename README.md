@@ -63,12 +63,12 @@ docker network inspect <taller-network>
 
 # Explicación de ports vs expose
 
-La explicación se encuentra en el punto 10 de la [Parte 9](#Parte-9-—-Diagnóstico-de-errores)
+La explicación se encuentra en la [Parte 7](#Parte-7---Eliminar-el-acceso-directo-al-Backend)
 
 
 #  Explicación de localhost vs nombre del servicio Docker.
 
-La explicación se encuentra en la [Parte 7](#Parte-7---Eliminar-el-acceso-directo-al-Backend)
+La explicación se encuentra en el punto 10 de la [Parte 9](#Parte-9-—-Diagnóstico-de-errores)
 
 # Parte 3 - Analizar el contenedor
 
@@ -97,14 +97,14 @@ ports publica un puerto del contenedor hacia la máquina host, permitiendo que e
 expose indica el puerto interno utilizado por un servicio para comunicación dentro de la red Docker, pero no publica ese puerto hacia el host. En este proyecto, la API utiliza expose en el puerto 3000 porque debe ser accesible por Nginx, pero no directamente por el usuario
 
 
-## Parte 8 - Pruebas
+# Parte 8 - Pruebas
 <img width="921" height="143" alt="image" src="https://github.com/user-attachments/assets/e07f29c3-307e-4a2b-8c4e-344efcde5151" />
 <img width="921" height="48" alt="image" src="https://github.com/user-attachments/assets/db56b2ce-9441-473e-9f54-f17713a6cc3c" />
 <img width="921" height="64" alt="image" src="https://github.com/user-attachments/assets/60126b16-72d9-4b5c-ab29-082fc8269668" />
 <img width="921" height="333" alt="image" src="https://github.com/user-attachments/assets/83d4ae59-2fc6-4fb1-9362-e17cc9e4bf6f" />
 <img width="921" height="134" alt="image" src="https://github.com/user-attachments/assets/20175964-5670-4cf0-85b5-07e0305c6ab5" />
 
-## Parte 9 — Diagnóstico de errores
+# Parte 9 — Diagnóstico de errores
  8. Se obtiene un error HTTP 502 Bad Gateway. Nginx recibe correctamente la solicitud del cliente, pero no puede conectarse al backend configurado como upstream.
  9. Ocurre porque Nginx intenta conectarse a localhost:3000. Dentro del contenedor Nginx, localhost representa al propio contenedor Nginx y no al contenedor de la API. Como la API no se está ejecutando dentro del contenedor Nginx, la conexión es rechazada.
  10. Cada contenedor Docker posee su propio entorno de red aislado. Por lo tanto, localhost o 127.0.0.1 representa al mismo contenedor desde el cual se realiza la conexión. Para comunicarse con otro contenedor es necesario utilizar su nombre dentro de la red Docker
