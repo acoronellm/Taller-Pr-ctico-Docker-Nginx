@@ -30,24 +30,35 @@ docker compose ps
 5. Probar la aplicación:
 
 curl http://localhost:8080/
+
 curl http://localhost:8080/health
+
 curl http://localhost:8080/api/products
 
 # Comandos Docker utilizados
 
 docker build -t backend-api .
+
 docker run -d --name backend-api -p 3000:3000 -e PORT=3000 backend-api
+
 docker ps
+
 docker logs backend-api
+
 docker inspect backend-api
 
 docker compose up -d --build
+
 docker compose ps
+
 docker compose logs nginx
+
 docker compose logs api
+
 docker compose down
 
 docker network ls
+
 docker network inspect <taller-network>
 
 # Explicación de ports vs expose
