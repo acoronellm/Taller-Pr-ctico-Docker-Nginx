@@ -76,14 +76,23 @@ La explicación se encuentra en el punto 10 de la [Parte 9](#parte-9--diagnósti
 - Imagen utilizada: backend-api
 - Puerto publicado: el contenedor expone el puerto 3000/tcp y este está publicado en el host también en el puerto 3000. El mapeo es 3000:3000.
 - Variables de entorno:
+  
   PORT=3000
+  
   PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
+
   NODE_VERSION=20.20.2
+
   YARN_VERSION=1.22.22
+
   Red: bridge
+
   Dirección IP interna del contenedor: 172.17.0.2
+
   Gateway de la red: 172.17.0.1
+
   Estado del contenedor: running
+
   El contenedor se encuentra actualmente en ejecución. La propiedad Running aparece como true y el código de salida es 0.
 ## Pregunta: ¿Cuál es la diferencia entre el puerto del contenedor y el puerto publicado en el host?
   
